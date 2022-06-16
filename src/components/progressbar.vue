@@ -10,7 +10,12 @@
 
 <script>
 export default {
-  props: ['percentage']
+  props: ['percentage'],
+    watch: {
+    percentage: function (value) {
+    console.log("list =>", value)
+    }
+    }
 };
 </script>
 
