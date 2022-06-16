@@ -14,6 +14,7 @@ export default {
     watch: {
     percentage: function (value) {
     console.log("list =>", value)
+    console.log("2")
     }
     }
 };
