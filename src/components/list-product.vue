@@ -22,12 +22,12 @@ return {
   created: function() {
     console.log("list =>", this.list)
   },
-  watch: {
-    list: function (value) {
-    console.log("list =>", value)
+  // watch: {
+  //   list: function (value) {
+  //   console.log("list =>", value)
 
-    }
-  }
+  //   }
+  // }
 };
 </script>
 

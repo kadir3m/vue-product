@@ -3,8 +3,8 @@
     <addProduct></addProduct>
     <progressbar :percentage="percentage"></progressbar>
     <listProduct :list="product_list">
-      <div slot="kadir" v-for="item in product_list" :key="item">
-        <singleProduct :product="item"></singleProduct>
+      <div slot="kadir" v-for="item in product_list" :key="item.id">
+        <singleProduct @deletedId="deleteProduct" :product="item"></singleProduct>
       </div>
     </listProduct>
   </div>
@@ -33,13 +33,28 @@ export default {
       percentage: 0
     };
   },
+  methods: {
+        deleteProduct(id) {
+      console.log("app =>", this.product_list);
+       const i = this.product_list.map(data => data.id).indexOf(id);
+       console.log("i=>>>>",i)
+        this.product_list.splice(i,1);
+        }
+  },
     created: function() {
     eventBus.$on('product-list', (data) =>{
       this.product_list = data
-      if(this.percentage >= 100)  return;
+      if(this.percentage >= 101)  return;
       this.percentage = this.product_list.length * 10;
-      console.log("app =>", this.product_list);
     })
+  },
+   watch: {
+    product_list: function (value) {
+      console.log("app")
+    if(this.percentage >= 101)  return;
+      this.percentage = this.product_list.length * 10;
+
+    }
   }
 };
 </script>

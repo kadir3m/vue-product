@@ -97,10 +97,15 @@ export default {
       };
     },
     addProduct() {
+      if (this.productList.length === 10) return;
       this.entity.previewImage = this.previewImage;
+      const maxId = Math.max(...this.productList.map(data => data.id)) < 0 ? 0 : Math.max(...this.productList.map(data => data.id));
+      const id = maxId + 1;
+      this.entity.id = id;
       this.productList.push(this.entity);
       console.log(this.productList);
       eventBus.$emit('product-list',this.productList);
+      console.log("id =>",this.entity.id)
       this.entity = {}
     }
   },
