@@ -19,6 +19,7 @@ export default {
     methods: {
         deleteProduct(id) {
         this.$emit('deletedId', id);
+        console.log("1");
         }
     },
     data: () => {
