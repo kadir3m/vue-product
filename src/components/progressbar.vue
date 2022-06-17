@@ -3,7 +3,8 @@
     <span :style="{color: percentage > 50 ? 'white' : ''}">{{percentage+'%'}}</span>
 
     <div class="active" :style="{width: percentage + '%'}">
-
+<p></p>
+<p></p>
     </div>
   </div>
 </template>
