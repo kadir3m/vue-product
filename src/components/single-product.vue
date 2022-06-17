@@ -20,6 +20,7 @@ export default {
         deleteProduct(id) {
         this.$emit('deletedId', id);
         console.log("1");
+        console.log("1");
         }
     },
     data: () => {
