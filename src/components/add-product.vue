@@ -95,6 +95,7 @@ export default {
       reader.onload = e => {
         this.previewImage = e.target.result;
       };
+      console.log("ka");
     },
     addProduct() {
       if (this.productList.length === 10) return;

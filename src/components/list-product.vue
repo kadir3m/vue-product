@@ -21,7 +21,8 @@ return {
   },
 
   created: function() {
-    console.log("list =>", this.list)
+    console.log("list =>", this.list);
+    console.log("list =>", this.list);
   },
   // watch: {
   //   list: function (value) {
