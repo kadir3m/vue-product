@@ -5,6 +5,7 @@
     <div class="active" :style="{width: percentage + '%'}">
 <p></p>
 <p></p>
+<p></p>
     </div>
   </div>
 </template>
